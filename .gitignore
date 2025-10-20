@@ -6,6 +6,14 @@ node_modules
 .next
 .vercel
 
+# SQLite database - regenerate on each environment
+.db
+.db-shm
+.db-wal
+
+# Environment variables - configure per environment
+.env
+
 # Payload default media upload directory
 public/media/
 
