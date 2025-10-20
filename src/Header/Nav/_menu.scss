@@ -1,0 +1,376 @@
+@use '../../app/(frontend)/variables' as *;
+
+// ========================================
+// MENU WRAPPER
+// ========================================
+
+.menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: $z-index-menu !important;
+  padding: $spacing-md; 
+
+  &.scrolled .menu-header {
+    background-color: $color-bg-overlay;
+    backdrop-filter: $blur-light;
+    transform: translateY(-10px);
+     border: $border-width-thin solid #4d4d4d;
+  }
+}
+
+// ========================================
+// MENU HEADER
+// ========================================
+
+.menu-header {
+  width: 100%;
+  max-width: $max-width;
+  padding: $spacing-sm; 
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  background-color: transparent;
+  backdrop-filter: blur(0);
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: $border-radius-sm;
+  transform: translateY(0px);
+  transition: background-color $transition-slower $ease-in-out,
+  backdrop-filter $transition-slower $ease-in-out,
+  transform $transition-slower $ease-in-out;
+ 
+
+  a,
+  .menu-toggle-button p,
+  .menu-close-button p {
+    color: $color-text-primary;
+    cursor: none;
+  }
+}
+
+.menu-logo a img {
+  height: $logo-height;
+  width: $logo-width;
+}
+
+// ========================================
+// MENU HEADER RIGHT
+// ========================================
+
+.menu-header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $gap-2xl;
+}
+
+.menu-main-links {
+  display: flex;
+  flex-direction: row;
+  gap: $gap-2xl;
+
+  @media (max-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
+// ========================================
+// MENU TOGGLE BUTTON
+// ========================================
+
+.menu-toggle-button {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: none;
+
+  div {
+    width: $menu-toggle-width;
+    height: $menu-toggle-height;
+    background-color: $color-primary;
+    transition: all $transition-normal $ease-in-out;
+  }
+
+  &:hover {
+    div:first-child {
+      transform: translateX(-5px);
+    }
+
+    div:last-child {
+      transform: translateX(5px);
+    }
+  }
+}
+
+// ========================================
+// MENU CLOSE BUTTON
+// ========================================
+
+.menu-close-button {
+  width: $menu-toggle-width;
+  height: $menu-toggle-width;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: none;
+
+  div {
+    width: $menu-toggle-width;
+    height: $menu-toggle-height;
+    position: absolute;
+    background-color: $color-text-dark;
+    transition: all $transition-slow $ease-in-out;
+
+    &:first-child {
+      transform: rotate(45deg);
+    }
+
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    div {
+      background-color: $color-text-primary;
+    }
+  }
+}
+
+// ========================================
+// TIME DISPLAY
+// ========================================
+
+.time {
+  display: flex;
+  flex-direction: row;
+  gap: $gap-lg;
+
+  .clock {
+    color: $color-primary;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    flex-direction: column;
+    align-items: center;
+    gap: $gap-xs;
+  }
+}
+
+// ========================================
+// MENU OVERLAY
+// ========================================
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-text-primary;
+  display: flex;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+
+  @media (max-width: $breakpoint-lg) {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+}
+
+.menu-overlay-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: $spacing-lg $spacing-xl;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: $spacing-lg;
+  }
+}
+
+// ========================================
+// MENU LAYOUT
+// ========================================
+
+.menu-left,
+.menu-right {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-2xl;
+  justify-content: space-between;
+
+  @media (max-width: $breakpoint-lg) {
+    width: 100%;
+    padding: $spacing-xl $spacing-md;
+  }
+}
+
+.menu-left {
+  width: 60%;
+  background-image: url(/media/home-banner.png);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (max-width: $breakpoint-2xl) {
+    width: 50%;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    gap: $spacing-lg;
+    width: 100%;
+  }
+}
+
+.menu-right {
+  width: 40%;
+  background-color: $color-text-primary;
+
+  @media (max-width: $breakpoint-lg) {
+    width: 100%;
+  }
+}
+
+// ========================================
+// SOCIAL LINKS
+// ========================================
+
+.menu-social-list {
+  display: flex;
+  flex-direction: row;
+  gap: $gap-md;
+
+  li {
+    transition: all $transition-normal $ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+// ========================================
+// MENU LINKS
+// ========================================
+
+.menu-links,
+.menu-extra-links,
+.menu-contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-extra-links {
+  flex-direction: row;
+  gap: $gap-3xl;
+
+  @media (max-width: $breakpoint-lg) {
+    flex-direction: column;
+    width: 100%;
+    gap: $spacing-lg;
+  }
+}
+
+.menu-extra-col {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  &:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    max-height: 170px;
+  }
+}
+
+.menu-main-link-item,
+.menu-extra-col1-link-item,
+.menu-extra-col2-link-item {
+  width: max-content;
+  overflow: hidden;
+}
+
+// ========================================
+// LINK STYLES
+// ========================================
+
+.menu-main-link-wrapper a,
+.menu-extra-col1-link-wrapper a,
+.menu-extra-col2-link-wrapper a {
+  font-weight: $font-weight-regular;
+  letter-spacing: $letter-spacing-tight;
+  text-transform: none !important;
+}
+
+.menu-main-link-wrapper a {
+  color: $color-text-primary;
+  font-size: 65px;
+  line-height: 120%;
+
+  @media (max-width: $breakpoint-lg) {
+    font-size: 40px;
+  }
+}
+
+.menu-extra-col1-link-wrapper a {
+  color: $color-text-dark !important;
+  font-size: 25px;
+  line-height: $line-height-relaxed;
+}
+
+.menu-extra-col2-link-wrapper a {
+  color: $color-text-dark !important;
+  font-size: 16px;
+  line-height: $line-height-relaxed;
+}
+
+// ========================================
+// CONTACT INFO
+// ========================================
+
+.menu-contact-info {
+  gap: $gap-sm;
+
+  a,
+  p {
+    color: $color-text-dark !important;
+    text-decoration: none;
+    text-transform: none !important;
+    line-height: $line-height-comfortable;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    display: flex;
+    padding-top: $spacing-lg;
+  }
+}
+
+// ========================================
+// RESPONSIVE OVERRIDES
+// ========================================
+
+@media (max-width: $breakpoint-lg) {
+  .menu-wrapper {
+    padding: $spacing-md $spacing-sm $spacing-sm $spacing-sm;
+  }
+
+  .menu-header {
+    padding: $spacing-sm;
+  }
+}

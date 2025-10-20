@@ -1,0 +1,198 @@
+@use '../../../app/(frontend)/variables' as *;
+
+// ========================================
+// TECHNOLOGY SECTION
+// ========================================
+
+.technology {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: $spacing-md;
+  background-position: center;
+  background-size: cover;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: 5em $spacing-md $spacing-md $spacing-md;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+.technology-inner {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: $gap-3xl;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-lg) {
+    flex-direction: column;
+    gap: $gap-2xl;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    gap: $gap-xl;
+  }
+}
+
+// ========================================
+// TECHNOLOGY LEFT & RIGHT
+// ========================================
+
+.technology-left,
+.technology-right {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xl;
+  height: 100vh;
+  width: 50%;
+  justify-content: center;
+
+  @media (max-width: $breakpoint-lg) {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.technology-right {
+  align-items: center;
+}
+
+.technology-left {
+  @media (max-width: $breakpoint-lg) {
+    gap: $gap-lg;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    gap: $gap-md;
+  }
+
+  h2 {
+    .line:last-child {
+      .word:nth-last-of-type(1),
+      .word:nth-last-of-type(2),
+      .word:nth-last-of-type(3) {
+        color: $color-primary !important;
+      }
+    }
+  }
+
+  p {
+    @media (max-width: $breakpoint-sm) {
+      font-size: $font-size-small;
+      line-height: $line-height-relaxed;
+    }
+  }
+}
+
+// ========================================
+// STACK ICONS
+// ========================================
+
+.stack-icon {
+  display: flex;
+  flex-direction: column;
+  border: $border-width-thin solid #4d4d4d;
+  border-radius: $border-radius-sm;
+  height: 72vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: $color-glass-bg;
+  backdrop-filter: $blur-medium;
+  -webkit-backdrop-filter: $blur-medium;
+  box-shadow: $shadow-light;
+
+  @media (max-width: $breakpoint-md) {
+    height: 60vh;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    height: 50vh;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    height: 42vh;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    @media (max-width: $breakpoint-md) {
+      height: 58vh;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      height: 48vh;
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      height: 40vh;
+    }
+
+    li {
+      flex-basis: calc(33.33% - 10px);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity $transition-slower $ease-in-out,
+        filter $transition-slower $ease-in-out;
+
+    
+
+      svg {
+        max-height: 4.5vw;
+        width: 6vw;
+        fill: $color-text-primary;
+
+        @media (max-width: $breakpoint-md) {
+          max-height: 6vh;
+          width: 10vw;
+        }
+
+        @media (max-width: $breakpoint-sm) {
+          max-height: 6vh;
+          width: 12vw;
+        }
+
+        @media (max-width: $breakpoint-xs) {
+          max-height: 5vh;
+          width: 15vw;
+        }
+      }
+
+      &:nth-child(2n) svg {
+        fill: $color-primary;
+      }
+    }
+  }
+}
+
+// ========================================
+// ICON ANIMATIONS
+// ========================================
+
+.icon-item {
+  &.fade-out {
+    opacity: 0;
+    filter: blur(5px);
+  }
+
+  &.fade-in {
+    opacity: 1;
+    filter: blur(0);
+  }
+}

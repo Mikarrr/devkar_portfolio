@@ -1,0 +1,280 @@
+@use '../../../app/(frontend)/variables' as *;
+
+// Portfolio Section on Homepage
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-position: center;
+  background-size: cover;
+  padding: 2em;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height:80%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: $max-width;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.project-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  
+}
+
+.project-item {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: #3f3f3f26;
+  width: 100%;
+  border-radius: calc(0.5rem - 1px);
+  padding: 4em 4em;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+
+}
+
+// Project Description
+.project-inner .project-description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+  justify-content: flex-start;
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .category {
+    color: #ff4d4d;
+    font-weight: 500;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        background-color: #161616b9;
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: #c7c7c7;
+        font-weight: 300;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+    }
+
+    p:first-child {
+      background-color: #ff4d4d;
+      color: black;
+      font-weight: 500;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Project Images
+.project-inner .project-image {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 70%;
+
+  .project-image-con {
+    min-height: 500px;
+    border-radius: calc(0.5rem - 1px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+  
+
+    &:first-child {
+      width: 60%;
+    }
+
+    &:last-child {
+      width: 40%;
+    }
+  }
+}
+
+// More Button
+.more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+// Responsive Styles
+@media (max-width: 1300px) {
+  .project-inner .project-description {
+    width: 50%;
+  }
+
+  .project-inner .project-image {
+    width: 50%;
+
+    .project-image-con:last-child {
+      display: none;
+    }
+
+    .project-image-con:first-child {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .project {
+    gap: 40px;
+    padding: 1.5em;
+    background-attachment: scroll;
+  }
+
+  .project-inner {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0em;
+  }
+
+  .project-item {
+    flex-direction: column;
+    padding: 2em 2em;
+  }
+
+  .project-inner .project-description {
+    width: 100%;
+
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .project-inner .project-image {
+    width: 100%;
+    min-height: 200px;
+    flex-direction: column;
+
+    .project-image-con:last-child {
+      width: 100%;
+      display: block;
+    }
+
+    .project-image-con:first-child {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .project {
+    gap: 30px;
+    padding: 1em;
+  }
+
+  .project-inner {
+    gap: 30px;
+  }
+
+  .project-item {
+    padding: 1.5em 1.5em;
+  }
+
+  .project-inner .project-description {
+    .title {
+      font-size: 1.3rem;
+    }
+  }
+
+  .project-inner .project-image .project-image-con {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project {
+    gap: 25px;
+  }
+
+  .project-inner {
+    gap: 25px;
+  }
+
+  .project-item {
+    padding: 1em 1em;
+  }
+
+  .project-inner .project-description {
+    gap: 15px;
+
+    .title {
+      font-size: 1.2rem;
+    }
+  }
+
+  .project-inner .project-image .project-image-con {
+    min-height: 250px;
+  }
+}

@@ -12,6 +12,7 @@ export const Header: GlobalConfig = {
     {
       name: 'navItems',
       type: 'array',
+      label: 'Main Navigation Items',
       fields: [
         link({
           appearances: false,
@@ -23,6 +24,24 @@ export const Header: GlobalConfig = {
         components: {
           RowLabel: '@/Header/RowLabel#RowLabel',
         },
+      },
+    },
+    {
+      name: 'secondaryNavItems',
+      type: 'array',
+      label: 'Secondary Navigation Items (Menu Right)',
+      fields: [
+        link({
+          appearances: false,
+        }),
+      ],
+      maxRows: 10,
+      admin: {
+        initCollapsed: true,
+        components: {
+          RowLabel: '@/Header/RowLabel#RowLabel',
+        },
+        description: 'Links displayed in the right column of the menu overlay',
       },
     },
   ],

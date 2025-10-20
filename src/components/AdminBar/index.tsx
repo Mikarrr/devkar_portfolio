@@ -8,8 +8,6 @@ import { PayloadAdminBar } from '@payloadcms/admin-bar'
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
-import './index.scss'
-
 import { getClientSideURL } from '@/utilities/getURL'
 
 const baseClass = 'admin-bar'
@@ -53,37 +51,35 @@ export const AdminBar: React.FC<{
         hidden: !show,
       })}
     >
-      <div className="container">
-        <PayloadAdminBar
-          {...adminBarProps}
-          className="py-2 text-white"
-          classNames={{
-            controls: 'font-medium text-white',
-            logo: 'text-white',
-            user: 'text-white',
-          }}
-          cmsURL={getClientSideURL()}
-          collectionSlug={collection}
-          collectionLabels={{
-            plural: collectionLabels[collection]?.plural || 'Pages',
-            singular: collectionLabels[collection]?.singular || 'Page',
-          }}
-          logo={<Title />}
-          onAuthChange={onAuthChange}
-          onPreviewExit={() => {
-            fetch('/next/exit-preview').then(() => {
-              router.push('/')
-              router.refresh()
-            })
-          }}
-          style={{
-            backgroundColor: 'transparent',
-            padding: 0,
-            position: 'relative',
-            zIndex: 'unset',
-          }}
-        />
-      </div>
+      <PayloadAdminBar
+        {...adminBarProps}
+        className="py-2 text-white"
+        classNames={{
+          controls: 'font-medium text-white',
+          logo: 'text-white',
+          user: 'text-white',
+        }}
+        cmsURL={getClientSideURL()}
+        collectionSlug={collection}
+        collectionLabels={{
+          plural: collectionLabels[collection]?.plural || 'Pages',
+          singular: collectionLabels[collection]?.singular || 'Page',
+        }}
+        logo={<Title />}
+        onAuthChange={onAuthChange}
+        onPreviewExit={() => {
+          fetch('/next/exit-preview').then(() => {
+            router.push('/')
+            router.refresh()
+          })
+        }}
+        style={{
+          backgroundColor: 'transparent',
+          padding: 0,
+          position: 'relative',
+          zIndex: 'unset',
+        }}
+      />
     </div>
   )
 }

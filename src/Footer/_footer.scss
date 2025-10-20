@@ -1,0 +1,156 @@
+@use '../app/(frontend)/variables' as *;
+// Footer Styles
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: black;
+  padding: 2em;
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  hr {
+    border: none;
+    border-top: 1px solid white;
+    width: 100%;
+    margin: 0;
+
+    &.red {
+      border-top: 1px solid #ff4d4d;
+    }
+  }
+}
+
+// Upper Footer Section
+.up-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+
+  > div {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+// Footer Section Headings
+.footer .text {
+  margin-bottom: 10px;
+  color: #ff4d4d;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Footer Small Text
+.footer .small-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+// Footer Sections
+.address,
+.social,
+.contact-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  div {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+// Lower Footer Section
+.down-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+
+  .text {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+}
+
+// Responsive Styles
+@media (max-width: 1024px) {
+  .footer {
+    gap: 30px;
+    padding: 1.5em;
+  }
+
+  .up-footer {
+    gap: 30px;
+
+    > div {
+      min-width: 150px;
+    }
+  }
+
+  .down-footer {
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .address,
+  .social,
+  .contact-footer {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    gap: 25px;
+    padding: 1.5em 1em;
+  }
+
+  .up-footer {
+    flex-direction: column;
+    gap: 25px;
+
+    > div {
+      flex: none;
+      width: 100%;
+      min-width: 0;
+    }
+  }
+
+  .down-footer {
+    gap: 15px;
+
+    .text {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    gap: 20px;
+    padding: 1em;
+  }
+
+  .up-footer {
+    gap: 20px;
+  }
+
+  .footer .text {
+    font-size: 0.85rem;
+  }
+}

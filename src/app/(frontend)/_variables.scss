@@ -1,0 +1,173 @@
+// ========================================
+// COLORS
+// ========================================
+
+// Primary Colors
+$color-primary: #ff4d4d;
+$color-primary-hover: #ff3333;
+
+// Background Colors
+$color-bg-dark: rgb(0, 0, 0);
+$color-bg-light: rgb(10, 10, 10);
+$color-bg-overlay: rgba(255, 255, 255, 0.1);
+
+// Text Colors
+$color-text-primary: rgb(255, 255, 255);
+$color-text-secondary: #ebebebff;
+$color-text-dark: black;
+
+// Glass Effect Colors
+$color-glass-bg: rgba(255, 255, 255, 0.05);
+$color-glass-border: rgba(255, 255, 255, 0.18);
+
+// Scrollbar Colors
+$color-scrollbar-track: rgba(255, 0, 0, 0.01);
+$color-scrollbar-thumb: #ff4d4d;
+
+// ========================================
+// TYPOGRAPHY
+// ========================================
+
+// Font Families
+$font-primary: "Michroma", sans-serif;
+$font-secondary: "Inter", sans-serif;
+
+// Font Sizes
+$font-size-base: 1rem;
+$font-size-small: 0.875rem;
+$font-size-medium: 1.2rem;
+$font-size-large: 2.5rem;
+
+// Responsive Font Sizes (using clamp)
+$font-size-h1: clamp(2.375rem, 2rem + 1.6667vw, 4rem);
+$font-size-h2: clamp(1.4625rem, 0.899rem + 2.9487vw, 3rem);
+$font-size-h3: clamp(1.325rem, 0.6346rem + 2.1795vw, 2.1875rem);
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Line Heights
+$line-height-tight: 100%;
+$line-height-normal: 115%;
+$line-height-comfortable: 120%;
+$line-height-relaxed: 140%;
+
+// Letter Spacing
+$letter-spacing-tight: -0.02em;
+$letter-spacing-normal: 0;
+
+// ========================================
+// LAYOUT
+// ========================================
+
+// Max Width
+$max-width: 1920px;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 3rem;
+$spacing-xl: 4rem;
+$spacing-2xl: 6rem;
+
+// Gaps
+$gap-xs: 5px;
+$gap-sm: 10px;
+$gap-md: 15px;
+$gap-lg: 20px;
+$gap-xl: 30px;
+$gap-2xl: 40px;
+$gap-3xl: 100px;
+
+// ========================================
+// BORDERS
+// ========================================
+
+// Border Radius
+$border-radius-sm: calc(0.5rem - 1px);
+$border-radius-md: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-full: 50%;
+
+// Border Width
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;
+
+// ========================================
+// EFFECTS
+// ========================================
+
+// Box Shadows
+$shadow-light: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.2);
+$shadow-heavy: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+// Blur
+$blur-light: blur(10px);
+$blur-medium: blur(20px);
+
+// ========================================
+// TRANSITIONS
+// ========================================
+
+// Transition Durations
+$transition-fast: 0.1s;
+$transition-normal: 0.2s;
+$transition-medium: 0.25s;
+$transition-slow: 0.3s;
+$transition-slower: 0.5s;
+
+// Transition Easings
+$ease-in-out: ease-in-out;
+$ease-out: ease-out;
+$ease-in: ease-in;
+
+// ========================================
+// Z-INDEX
+// ========================================
+
+$z-index-cursor: 9999999;
+$z-index-menu: 999999;
+$z-index-overlay: 999999999;
+$z-index-preloader: 999999999999;
+
+// ========================================
+// BREAKPOINTS
+// ========================================
+
+$breakpoint-xs: 480px;
+$breakpoint-sm: 724px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1065px;
+$breakpoint-xl: 1200px;
+$breakpoint-2xl: 1300px;
+$breakpoint-3xl: 1400px;
+
+// ========================================
+// SIZES
+// ========================================
+
+// Cursor Sizes
+$cursor-size-small: 10px;
+$cursor-size-large: 40px;
+
+// Logo Size
+$logo-height: 30px;
+$logo-width: 35px;
+
+// Button Sizes
+$button-padding-sm: 1.05rem 2rem;
+$button-padding-md: 1.05rem 2rem;
+
+// Menu Sizes
+$menu-toggle-width: 30px;
+$menu-toggle-height: 2px;
+
+// Scrollbar Width
+$scrollbar-width: 3px;

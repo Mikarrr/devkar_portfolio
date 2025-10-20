@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-payload-app:*)"
+      "Bash(npx create-payload-app:*)",
+      "Bash(pnpm generate:types:*)",
+      "Bash(npm run build)"
     ],
     "deny": [],
     "ask": []

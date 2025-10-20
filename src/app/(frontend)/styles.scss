@@ -1,0 +1,20 @@
+@use './variables' as *;
+@use './globals';
+@use '../../components/buttonRev/buttonRev';
+@use '../../components/customCurosr/customCursor';
+@use '../../components/buttonRevArrow/buttonRevArrow';
+@use '../../components/homePage/heroSection/heroSection';
+@use '../../components/homePage/aboutMeSection/aboutMeSection';
+@use '../../components/homePage/technologySection/technologySection';
+@use '../../components/homePage/portfolioSection/portfolioSection';
+@use '../../components/homePage/contactSection/contactSection';
+@use '../../components/portfolioPage/portfolio';
+@use '../../components/singlePortfolioPage/singlePortfolioPage';
+@use '../../Footer/footer';
+@use '../../Header/Nav/menu';
+
+
+@use '../../components/BeforeDashboard/SeedButton/index';
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Michroma&display=swap");
+

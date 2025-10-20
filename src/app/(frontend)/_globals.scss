@@ -1,0 +1,296 @@
+@use './variables' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: unset;
+    font-weight: unset;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 240 5% 96%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 6% 80%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.2rem;
+
+    --success: 196 52% 74%;
+    --warning: 34 89% 85%;
+    --error: 10 100% 86%;
+  }
+
+  [data-theme='dark'] {
+    --background: 0 0% 0%;
+    --foreground: 210 40% 98%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0, 0%, 15%, 0.8;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --success: 196 100% 14%;
+    --warning: 34 51% 25%;
+    --error: 10 39% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground min-h-[100vh] flex flex-col;
+  }
+}
+
+html {
+  opacity: 0;
+}
+
+html[data-theme='dark'],
+html[data-theme='light'] {
+  opacity: initial;
+}
+
+
+
+// ========================================
+// GLOBAL RESET
+// ========================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+ 
+}
+
+
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+// ========================================
+// BODY
+// ========================================
+
+body {
+  color: $color-text-primary;
+  font-size: $font-size-base;
+  font-family: $font-primary;
+  background: $color-bg-dark;
+  text-size-adjust: 100%;
+  width: 100vw;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+// ========================================
+// TYPOGRAPHY
+// ========================================
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+a,
+p,
+li {
+  color: $color-text-primary;
+  text-decoration: none;
+  line-height: $line-height-comfortable;
+  font-family: $font-secondary !important;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  line-height: $line-height-tight;
+  margin: 0;
+  padding: 0;
+  font-weight: $font-weight-bold;
+
+ 
+}
+
+h2 {
+  font-size: $font-size-h2;
+  line-height: $line-height-normal;
+  margin: 0;
+  padding: 0;
+}
+
+h3{
+  font-size: $font-size-h3;
+  line-height: $line-height-normal;
+  margin: 0;
+  padding: 0;
+}
+
+// ========================================
+// SCROLLBAR
+// ========================================
+
+::-webkit-scrollbar {
+  width: $scrollbar-width;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-scrollbar-track;
+  -webkit-backdrop-filter: $blur-light;
+  backdrop-filter: $blur-light;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-scrollbar-thumb;
+}
+
+// ========================================
+// TRANSITIONS & PRELOADER
+// ========================================
+
+.transition-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-bg-light;
+  z-index: $z-index-overlay;
+  padding: $spacing-md;
+}
+
+.preload-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-bg-light;
+  z-index: $z-index-preloader;
+  padding: $spacing-md;
+
+  &-top {
+    height: 80vh;
+    display: flex;
+    justify-content: flex-end;
+
+    .loading-number {
+      font-size: 10vw;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 15vw;
+      }
+    }
+  }
+
+  &-down {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 20vh;
+
+    div p:last-child {
+      color: $color-primary;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: $gap-lg;
+    }
+  }
+}
+
+
+.admin-bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0.25rem 2rem;
+  max-width: $max-width;
+  margin: 0 auto;
+  z-index: 999999999;
+
+}

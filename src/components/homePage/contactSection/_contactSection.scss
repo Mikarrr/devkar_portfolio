@@ -1,0 +1,97 @@
+@use '../../../app/(frontend)/variables' as *;
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-2xl;
+  background-color: $color-bg-dark;
+  padding: 7em $spacing-md $spacing-md $spacing-md;
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  container-type: inline-size;
+}
+
+.custom-h1 {
+  width: 100%;
+  font-size: clamp(2rem, 9.4cqw, 15rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.contact-down-inner {
+  display: flex;
+  flex-direction: row;
+  gap: $gap-2xl;
+}
+
+.top-row {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+}
+
+.social-media,
+.adress-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-sm;
+}
+
+.contact-info {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-sm;
+}
+
+.tag,
+.contact-description {
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  margin-bottom: 1em;
+}
+
+@media (max-width: $breakpoint-md) {
+ 
+
+  .top-row {
+    gap: $gap-xl;
+  }
+
+  .social-media,
+  .adress-info {
+    gap: $gap-xs;
+  }
+
+  .tag,
+  .contact-description {
+    margin-bottom: 0.7em;
+  }
+}
+
+@media (max-width: 800px) {
+  .contact {
+    gap: $gap-lg;
+    padding: 4em $spacing-md $spacing-md $spacing-md;
+  }
+
+  .custom-h1 {
+    font-size: clamp(1rem, 9cqw, 15rem);
+  }
+
+  .contact-down-inner {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-lg;
+  }
+
+  .contact-info {
+    width: 100%;
+  }
+
+  .top-row {
+    width: 100%;
+  }
+}

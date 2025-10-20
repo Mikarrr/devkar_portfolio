@@ -1,0 +1,44 @@
+@use '../../app/(frontend)/variables' as *;
+
+.cursor {
+  position: fixed;
+  width: $cursor-size-large;
+  height: $cursor-size-large;
+  border: $border-width-thin solid $color-primary;
+  border-radius: $border-radius-full;
+  pointer-events: none;
+  transition: transform $transition-normal $ease-in-out,
+    border $transition-fast $ease-in-out;
+  transform: translate(-50%, -50%);
+  z-index: $z-index-cursor;
+}
+
+.cursor-dot {
+  position: fixed;
+  width: $cursor-size-small;
+  height: $cursor-size-small;
+  background-color: $color-primary;
+  border-radius: $border-radius-full;
+  pointer-events: none;
+  transition: transform $transition-normal $ease-in-out,
+    height $transition-slow $ease-in-out, width $transition-slow $ease-in-out,
+    background-color $transition-fast $ease-in-out;
+  transform: translate(-50%, -50%);
+  z-index: $z-index-cursor;
+
+  &.large {
+    width: $cursor-size-large;
+    height: $cursor-size-large;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .cursor,
+  .cursor-dot {
+    display: none;
+  }
+
+  * {
+    cursor: default;
+  }
+}
